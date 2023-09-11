@@ -1,14 +1,34 @@
+-- 7 Billion Humans (2235) --
+-- 16: 小小驱虫工 2 --
+
 step s
 step s
 step s
 step s
-step sw
-step e
-pickup w,se
-step e
-step e
-step e
-giveto sw,s,ne
-step e
-step se
-giveto se
+if c == datacube:
+	pickup c
+	step e
+	step e
+	step e
+	giveto se
+else:
+	if s == datacube:
+		a:
+		pickup s
+		step e
+		step e
+		step e
+		step e
+		if se == worker:
+			step se
+			giveto s
+		endif
+		step se
+		giveto se
+	else:
+		step s
+		jump a
+	endif
+endif
+
+
